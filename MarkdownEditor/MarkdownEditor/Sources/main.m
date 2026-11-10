@@ -7,7 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PreferenceManager.h"
 
 int main(int argc, const char * argv[]) {
+    [PreferenceManager registerDefaults];
     return NSApplicationMain(argc, argv);
 }

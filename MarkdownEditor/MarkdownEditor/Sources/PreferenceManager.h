@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property BOOL autoReloadEnabled;
 
+/// Registers factory default values. Call before any UI bound to user defaults loads.
++ (void)registerDefaults;
+
 @end
 
 NS_ASSUME_NONNULL_END

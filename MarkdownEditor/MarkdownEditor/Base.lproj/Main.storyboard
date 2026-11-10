@@ -17,7 +17,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="MarkdownEditor" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About MarkdownEditor" id="5kV-Vb-QxS">
+                                        <menuItem title="About Markdown Editor" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -689,9 +689,9 @@
                     <window key="window" title="Markdown Editor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="1280" height="720"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="0111CAD2-44B3-449F-B8E0-23621B768943" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="dWm-gl-GYv">
+                        <toolbar key="toolbar" implicitIdentifier="0111CAD2-44B3-449F-B8E0-23621B768943" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="dWm-gl-GYv">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="A39FF6F0-0677-4C88-BBEB-104ACFFCAF9A" label="" paletteLabel="" id="grI-lK-Y4O">
                                     <nil key="toolTip"/>
@@ -718,44 +718,290 @@
                                     </popUpButton>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="zLE-yQ-Nvv"/>
-                                <toolbarItem implicitItemIdentifier="5416F42E-1164-4414-997A-1A6842B21EE4" label="" paletteLabel="" image="ic_github_32pt" id="DIL-EY-KD2">
+                                <toolbarItem implicitItemIdentifier="23F7A93B-2D82-483F-9E47-9241484D1916" label="Heading 1" paletteLabel="Heading 1" tag="1" id="tbi-00-hd1">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="82" height="32"/>
-                                    <size key="maxSize" width="82" height="32"/>
-                                    <button key="view" verticalHuggingPriority="750" id="OB9-0N-GaY">
-                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_github_32pt" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aO8-k7-az9">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <connections>
-                                        <action selector="loginButtonClicked:" target="B8D-0N-5wS" id="4qP-2G-ACY"/>
-                                    </connections>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Heading 1" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="hd1-x01-Bt">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="H1" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" tag="1" id="hd1-x01-Bc">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="headingButtonClicked:" target="Oky-zY-oP4" id="hd1-x01-Ac"/>
+        </connections>
+        </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="D378BA4F-E8D7-40A9-8BE6-6883F6FFE968" label="" paletteLabel="" id="kJK-K8-feo">
+                                <toolbarItem implicitItemIdentifier="9D153D57-01BD-4F69-BA6E-D9DC451AB11A" label="Heading 2" paletteLabel="Heading 2" tag="2" id="tbi-01-hd2">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="82" height="32"/>
-                                    <size key="maxSize" width="82" height="32"/>
-                                    <button key="view" verticalHuggingPriority="750" id="Zak-sX-yDe">
-                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Upload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="58r-IT-AyC">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <connections>
-                                        <action selector="uploadDocument:" target="Oky-zY-oP4" id="ecG-se-hpq"/>
-                                    </connections>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Heading 2" verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="hd2-x02-Bt">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="H2" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" tag="2" id="hd2-x02-Bc">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="headingButtonClicked:" target="Oky-zY-oP4" id="hd2-x02-Ac"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="982B8AD7-6121-4BAD-AB50-76C57FA25254" label="Heading 3" paletteLabel="Heading 3" tag="3" id="tbi-02-hd3">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Heading 3" verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-x03-Bt">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="H3" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" tag="3" id="hd3-x03-Bc">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="headingButtonClicked:" target="Oky-zY-oP4" id="hd3-x03-Ac"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="CA895302-B034-4433-99B8-BBB029B3C21D" label="Heading 4" paletteLabel="Heading 4" tag="4" id="tbi-03-hd4">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Heading 4" verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="hd4-x04-Bt">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="H4" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" tag="4" id="hd4-x04-Bc">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="headingButtonClicked:" target="Oky-zY-oP4" id="hd4-x04-Ac"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="CF74C21F-B034-413A-84A0-674AB27B8914" label="Heading 5" paletteLabel="Heading 5" tag="5" id="tbi-04-hd5">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Heading 5" verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-x05-Bt">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="H5" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" tag="5" id="hd5-x05-Bc">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="headingButtonClicked:" target="Oky-zY-oP4" id="hd5-x05-Ac"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="497EC172-79A1-4395-B6B9-AD54CF619865" label="Heading 6" paletteLabel="Heading 6" tag="6" id="tbi-05-hd6">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Heading 6" verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="hd6-x06-Bt">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="H6" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" tag="6" id="hd6-x06-Bc">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="headingButtonClicked:" target="Oky-zY-oP4" id="hd6-x06-Ac"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="tbs-Sp-006"/>
+                                <toolbarItem implicitItemIdentifier="0104124A-B210-48CD-9C97-79E8113C5CE8" label="Bold" paletteLabel="Bold" id="tbi-07-OQj">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-ss-Z06">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_bold_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hRg-OI-h2k">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="boldButtonClicked:" target="Oky-zY-oP4" id="0ol-1X-U2H"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="2A602F1B-D4B4-4E69-8838-0DA4AEDE243A" label="Strike Through" paletteLabel="Strike Through" id="tbi-08-Hpn">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-ON-XBf">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_strikethrough_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Aky-xj-IKC">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="strikeThroughButtonClicked:" target="Oky-zY-oP4" id="L26-ZE-0A5"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="5E11B8C2-16F4-4107-8F73-6CC1462E00AB" label="Italic" paletteLabel="Italic" id="tbi-09-DZC">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DZC-vH-Ipq">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_italic_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pXn-HN-5Uc">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="italicButtonClicked:" target="Oky-zY-oP4" id="y61-YI-1LG"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="tbs-Sp-010"/>
+                                <toolbarItem implicitItemIdentifier="20DAFD7B-D1B1-4A71-B69B-A7F711AC9EE2" label="Quote" paletteLabel="Quote" id="tbi-11-H8B">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H8B-JZ-2c4">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_quote_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UCW-xC-ad2">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="quoteButtonClicked:" target="Oky-zY-oP4" id="UAp-s3-aYd"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="41598A00-5E38-474C-A44D-5A58909F8B5E" label="Code" paletteLabel="Code" id="tbi-12-pLd">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-T1-wfE">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_code_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="syL-e9-bCL">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="codeButtonClicked:" target="Oky-zY-oP4" id="6a9-5P-8GQ"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="062DDDF5-7CE2-4044-A202-2CA8213C4D58" label="Link" paletteLabel="Link" id="tbi-13-tJD">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tJD-zX-4Ek">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_insert_link_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hn9-N0-AxR">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="insertLinkButtonClicked:" target="Oky-zY-oP4" id="gKL-fI-g7Q"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="tbs-Sp-014"/>
+                                <toolbarItem implicitItemIdentifier="4C5C9DB0-D779-470E-BA67-3A8C956D6361" label="Bulleted List" paletteLabel="Bulleted List" id="tbi-15-cgO">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-Rd-8cz">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_list_bulleted_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WNM-Yo-QKR">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="listBulletedButtonClicked:" target="Oky-zY-oP4" id="Uef-eu-ksa"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="5F2B9E07-6758-4DF1-A166-0EFA9B43AC78" label="Numbered List" paletteLabel="Numbered List" id="tbi-16-CTd">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CTd-Jo-LS6">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_list_numbered_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RnI-sn-uhd">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="listNumberedButtonClicked:" target="Oky-zY-oP4" id="9Qx-nk-oxo"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="D08430F2-5041-4FC0-83E5-2EEC760C23AA" label="Task List" paletteLabel="Task List" id="tbi-17-tSk">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Task List" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tSk-Bt-c01">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="☑" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tSk-Bc-c02">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="listTaskButtonClicked:" target="Oky-zY-oP4" id="tSk-Ac-c03"/>
+        </connections>
+        </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="tbs-Sp-018"/>
+                                <toolbarItem implicitItemIdentifier="C706EFE9-9A24-484F-A584-2124D4DE387D" label="Horizontal Rule" paletteLabel="Horizontal Rule" id="tbi-19-hRl">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+        <button key="view" toolTip="Horizontal Rule" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-Bt-d01">
+        <rect key="frame" x="0.0" y="14" width="32" height="25"/>
+        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <buttonCell key="cell" type="roundTextured" title="—" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hRl-Bc-d02">
+        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+        <font key="font" metaFont="system"/>
+        </buttonCell>
+        <connections>
+        <action selector="horizontalRuleButtonClicked:" target="Oky-zY-oP4" id="hRl-Ac-d03"/>
+        </connections>
+        </button>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="grI-lK-Y4O"/>
+                                <toolbarItem reference="tbi-00-hd1"/>
+                                <toolbarItem reference="tbi-01-hd2"/>
+                                <toolbarItem reference="tbi-02-hd3"/>
+                                <toolbarItem reference="tbi-03-hd4"/>
+                                <toolbarItem reference="tbi-04-hd5"/>
+                                <toolbarItem reference="tbi-05-hd6"/>
+                                <toolbarItem reference="tbs-Sp-006"/>
+                                <toolbarItem reference="tbi-07-OQj"/>
+                                <toolbarItem reference="tbi-08-Hpn"/>
+                                <toolbarItem reference="tbi-09-DZC"/>
+                                <toolbarItem reference="tbs-Sp-010"/>
+                                <toolbarItem reference="tbi-11-H8B"/>
+                                <toolbarItem reference="tbi-12-pLd"/>
+                                <toolbarItem reference="tbi-13-tJD"/>
+                                <toolbarItem reference="tbs-Sp-014"/>
+                                <toolbarItem reference="tbi-15-cgO"/>
+                                <toolbarItem reference="tbi-16-CTd"/>
+                                <toolbarItem reference="tbi-17-tSk"/>
+                                <toolbarItem reference="tbs-Sp-018"/>
+                                <toolbarItem reference="tbi-19-hRl"/>
                                 <toolbarItem reference="zLE-yQ-Nvv"/>
-                                <toolbarItem reference="DIL-EY-KD2"/>
-                                <toolbarItem reference="kJK-K8-feo"/>
+                                <toolbarItem reference="grI-lK-Y4O"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -804,7 +1050,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiR-Yz-1hy">
-                                <rect key="frame" x="0.0" y="37" width="450" height="235"/>
+                                <rect key="frame" x="0.0" y="0" width="450" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="9vL-R4-GZT">
                                     <rect key="frame" x="1" y="1" width="448" height="233"/>
@@ -842,94 +1088,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-Rd-8cz">
-                                <rect key="frame" x="291" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_list_bulleted_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WNM-Yo-QKR">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="listBulletedButtonClicked:" target="Wyk-aA-02j" id="Uef-eu-ksa"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJD-zX-4Ek">
-                                <rect key="frame" x="238" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_insert_link_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hn9-N0-AxR">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="insertLinkButtonClicked:" target="Wyk-aA-02j" id="gKL-fI-g7Q"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-T1-wfE">
-                                <rect key="frame" x="181" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_code_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="syL-e9-bCL">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="codeButtonClicked:" target="Wyk-aA-02j" id="6a9-5P-8GQ"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8B-JZ-2c4">
-                                <rect key="frame" x="141" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_quote_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UCW-xC-ad2">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="quoteButtonClicked:" target="Wyk-aA-02j" id="UAp-s3-aYd"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZC-vH-Ipq">
-                                <rect key="frame" x="85" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_italic_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pXn-HN-5Uc">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="italicButtonClicked:" target="Wyk-aA-02j" id="y61-YI-1LG"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-ss-Z06">
-                                <rect key="frame" x="5" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_bold_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hRg-OI-h2k">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="boldButtonClicked:" target="Wyk-aA-02j" id="0ol-1X-U2H"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-ON-XBf">
-                                <rect key="frame" x="45" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_strikethrough_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Aky-xj-IKC">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="strikeThroughButtonClicked:" target="Wyk-aA-02j" id="L26-ZE-0A5"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTd-Jo-LS6">
-                                <rect key="frame" x="331" y="5" width="32" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ic_format_list_numbered_48pt" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RnI-sn-uhd">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="listNumberedButtonClicked:" target="Wyk-aA-02j" id="9Qx-nk-oxo"/>
-                                </connections>
-                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -950,7 +1108,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-GR-HlJ">
-                                <rect key="frame" x="0.0" y="37" width="450" height="235"/>
+                                <rect key="frame" x="0.0" y="0" width="450" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -1003,7 +1161,6 @@
         <image name="ic_format_list_numbered_48pt" width="96" height="96"/>
         <image name="ic_format_quote_48pt" width="96" height="96"/>
         <image name="ic_format_strikethrough_48pt" width="96" height="96"/>
-        <image name="ic_github_32pt" width="64" height="64"/>
         <image name="ic_insert_link_48pt" width="96" height="96"/>
         <image name="ic_refresh_48pt" width="96" height="96"/>
     </resources>

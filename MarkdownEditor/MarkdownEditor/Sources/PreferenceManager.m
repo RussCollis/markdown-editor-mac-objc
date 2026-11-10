@@ -21,6 +21,10 @@ static NSString *AutoReloadEnabledKey = @"AutoReloadEnabled";
     return sharedInstance;
 }
 
++ (void)registerDefaults {
+    [NSUserDefaults.standardUserDefaults registerDefaults:@{AutoReloadEnabledKey: @YES}];
+}
+
 - (BOOL)autoReloadEnabled {
     @synchronized (self) {
         return [NSUserDefaults.standardUserDefaults boolForKey:AutoReloadEnabledKey];

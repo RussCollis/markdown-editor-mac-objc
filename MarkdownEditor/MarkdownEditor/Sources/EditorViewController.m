@@ -11,6 +11,7 @@
 #import "TextConverter.h"
 #import "GitHubGistsClient.h"
 #import "GitHubGistsContent.h"
+#import "LineNumberRulerView.h"
 
 @interface EditorViewController () <NSTextViewDelegate> {
     NSString *_filePath;
@@ -28,7 +29,16 @@
     [super viewDidLoad];
     // Do view setup here.
     
-    self.textView.string = [self loadSample];
+    // Show line numbers in a gutter down the left of the editor.
+    NSScrollView *scrollView = self.textView.enclosingScrollView;
+    scrollView.verticalRulerView = [[LineNumberRulerView alloc] initWithTextView:self.textView];
+    scrollView.hasVerticalRuler = YES;
+    scrollView.rulersVisible = YES;
+    // Re-lay out the scroll view so the text sits beside the gutter rather than under it.
+    [scrollView tile];
+
+    // Always start with a blank document.
+    self.textView.string = @"";
     [ConverterManager.sharedInstance setContentWithString:self.textView.string];
 }
 
@@ -146,6 +156,29 @@
     [self replaceCharactersInRange:range withString:string];
 }
 
+// Each heading button's tag (1-6) is its heading level.
+- (IBAction)headingButtonClicked:(NSButton *)sender {
+    NSInteger level = sender.tag;
+    if (level < 1 || level > 6) {
+        return;
+    }
+    NSString *prefix = [[@"" stringByPaddingToLength:level withString:@"#" startingAtIndex:0] stringByAppendingString:@" "];
+    [self prefixSelectedLinesWithString:prefix replacingExistingHeading:YES];
+}
+
+- (IBAction)listTaskButtonClicked:(NSButton *)sender {
+    [self prefixSelectedLinesWithString:@"- [ ] " replacingExistingHeading:NO];
+}
+
+- (IBAction)horizontalRuleButtonClicked:(NSButton *)sender {
+    NSString *string = self.textView.string;
+    NSRange range = self.textView.selectedRange;
+    // Keep the rule on its own line, separated by blank lines from surrounding text.
+    BOOL atLineStart = range.location == 0 || [string characterAtIndex:range.location - 1] == '\n';
+    NSString *rule = [NSString stringWithFormat:@"%@\n---\n\n", atLineStart ? @"" : @"\n"];
+    [self replaceCharactersInRange:range withString:rule];
+}
+
 #pragma mark - Menu Handler
 
 - (IBAction)newDocument:(id)sender {
@@ -248,10 +281,6 @@
 
 #pragma mark - Private Methods
 
-- (NSString *)loadSample {
-    return ConverterManager.sharedInstance.selectedConverter.sample;
-}
-
 - (NSString *)documentTitle {
     NSString *title = self.titleTextField.stringValue;
     if (!title) {
@@ -273,6 +302,33 @@
         return @"Unknown.md";
     }
     return [_filePath lastPathComponent];
+}
+
+/// Adds `prefix` to the start of every line touched by the selection (or the caret's line).
+- (void)prefixSelectedLinesWithString:(NSString *)prefix replacingExistingHeading:(BOOL)replacingHeading {
+    NSString *string = self.textView.string;
+    NSRange lineRange = [string lineRangeForRange:self.textView.selectedRange];
+    NSString *selectedLines = [string substringWithRange:lineRange];
+    BOOL endsWithNewline = [selectedLines hasSuffix:@"\n"];
+    if (endsWithNewline) {
+        selectedLines = [selectedLines substringToIndex:selectedLines.length - 1];
+    }
+
+    NSRegularExpression *headingPattern = [NSRegularExpression regularExpressionWithPattern:@"^#{1,6}\\s*" options:0 error:nil];
+    NSMutableArray<NSString *> *lines = [NSMutableArray array];
+    for (NSString *line in [selectedLines componentsSeparatedByString:@"\n"]) {
+        NSString *text = line;
+        if (replacingHeading) {
+            // Switching heading level replaces the old marker rather than stacking them.
+            text = [headingPattern stringByReplacingMatchesInString:line options:0 range:NSMakeRange(0, line.length) withTemplate:@""];
+        }
+        [lines addObject:[prefix stringByAppendingString:text]];
+    }
+    NSString *formatted = [lines componentsJoinedByString:@"\n"];
+    if (endsWithNewline) {
+        formatted = [formatted stringByAppendingString:@"\n"];
+    }
+    [self replaceCharactersInRange:lineRange withString:formatted];
 }
 
 - (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)string {

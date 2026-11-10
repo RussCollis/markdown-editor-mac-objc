@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Satoshi Iwaki. All rights reserved.
 //
 
-#import <AppAuth.h>
+@import AppAuth;
 
 #import "GitHubGistsClient.h"
 
@@ -36,7 +36,7 @@ static NSString *const kGithubTokenEndpoint = @"https://github.com/login/oauth/a
 @end
 
 @implementation GitHubGistsClient {
-    id<OIDAuthorizationFlowSession> _currentAuthorizationFlow;
+    id<OIDExternalUserAgentSession> _currentAuthorizationFlow;
     NSMutableArray<GitHubGistsClientTask *> *_tasks;
 }
 
@@ -130,7 +130,7 @@ static NSString *const kGithubTokenEndpoint = @"https://github.com/login/oauth/a
            withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
     NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
     NSURL *URL = [NSURL URLWithString:URLString];
-    [_currentAuthorizationFlow resumeAuthorizationFlowWithURL:URL];
+    [_currentAuthorizationFlow resumeExternalUserAgentFlowWithURL:URL];
 }
 
 - (void)didCompleteTask:(GitHubGistsClientTask *)task {

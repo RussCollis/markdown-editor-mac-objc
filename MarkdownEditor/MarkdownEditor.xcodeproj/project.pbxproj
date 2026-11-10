@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30678E6530A3501D001BDA4E /* LineNumberRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30678E6430A3501D001BDA4E /* LineNumberRulerView.m */; };
 		4F3A889D2052C7F500A0050E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A88832052C7F400A0050E /* AppDelegate.m */; };
 		4F3A889E2052C7F500A0050E /* ConverterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A88852052C7F400A0050E /* ConverterManager.m */; };
 		4F3A889F2052C7F500A0050E /* TextConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A88882052C7F400A0050E /* TextConverter.m */; };
@@ -32,6 +33,8 @@
 		4F94D42D2046E8A600D85BEA /* sample.md in Resources */ = {isa = PBXBuildFile; fileRef = 4F94D42C2046E8A600D85BEA /* sample.md */; };
 		4F94D4312048488500D85BEA /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = 4F94D4302048488500D85BEA /* markdown.css */; };
 		4F94D43520484F7300D85BEA /* markdown-header.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F94D43420484F7300D85BEA /* markdown-header.txt */; };
+		A1B2C3D4E5F600000000000A /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F600000000000C /* AppAuth */; };
+		A1B2C3D4E5F600000000000B /* GCDWebServer in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F600000000000D /* GCDWebServer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30678E6330A3500C001BDA4E /* LineNumberRulerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineNumberRulerView.h; sourceTree = "<group>"; };
+		30678E6430A3501D001BDA4E /* LineNumberRulerView.m */ = {isa = PBXFileReference; path = LineNumberRulerView.m; sourceTree = "<group>"; };
 		4F3A88822052C7F400A0050E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F3A88832052C7F400A0050E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4F3A88842052C7F400A0050E /* ConverterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConverterManager.h; sourceTree = "<group>"; };
@@ -106,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B2C3D4E5F600000000000A /* AppAuth in Frameworks */,
+				A1B2C3D4E5F600000000000B /* GCDWebServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +153,8 @@
 				4F7B193D208CCF04009BE0ED /* GitHubGistsClient.m */,
 				4F7B193F208CD17F009BE0ED /* GitHubGistsContent.h */,
 				4F7B1940208CD17F009BE0ED /* GitHubGistsContent.m */,
+				30678E6330A3500C001BDA4E /* LineNumberRulerView.h */,
+				30678E6430A3501D001BDA4E /* LineNumberRulerView.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -260,6 +269,10 @@
 			dependencies = (
 			);
 			name = MarkdownEditor;
+			packageProductDependencies = (
+				A1B2C3D4E5F600000000000C /* AppAuth */,
+				A1B2C3D4E5F600000000000D /* GCDWebServer */,
+			);
 			productName = MarkdownEditor;
 			productReference = 4F94D3EA20458A3B00D85BEA /* Markdown Editor.app */;
 			productType = "com.apple.product-type.application";
@@ -339,6 +352,10 @@
 				Base,
 			);
 			mainGroup = 4F94D3E120458A3B00D85BEA;
+			packageReferences = (
+				A1B2C3D4E5F600000000000F /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
+				A1B2C3D4E5F6000000000010 /* XCLocalSwiftPackageReference "Packages/GCDWebServer" */,
+			);
 			productRefGroup = 4F94D3EB20458A3B00D85BEA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -e \"${PROJECT_DIR}/MarkdownEditor/Binaries/pandoc\" ]; then\n  exit 0\nfi\n\n# Download and copy Pandoc library\nPANDOC_VERSION=\"2.1.3\"\nPANDOC_FILE_NAME=\"pandoc-${PANDOC_VERSION}\"\n\nrm -rf \"${PROJECT_DIR}/tmp\"\nmkdir \"${PROJECT_DIR}/tmp\"\ncd \"${PROJECT_DIR}/tmp\"\n\nwget \"https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/${PANDOC_FILE_NAME}-macOS.zip\"\nunzip \"pandoc-${PANDOC_VERSION}-macOS.zip\"\n\nmkdir -p \"${PROJECT_DIR}/MarkdownEditor/Binaries\"\ncp \"${PANDOC_FILE_NAME}/bin/pandoc\" \"${PROJECT_DIR}/MarkdownEditor/Binaries/.\"\n\nrm -rf \"${PROJECT_DIR}/tmp\"\n";
+			shellScript = "if [ -e \"${PROJECT_DIR}/MarkdownEditor/Binaries/pandoc\" ]; then\n  exit 0\nfi\n\n# Download and copy Pandoc library\nPANDOC_VERSION=\"2.1.3\"\nPANDOC_FILE_NAME=\"pandoc-${PANDOC_VERSION}\"\n\nrm -rf \"${PROJECT_DIR}/tmp\"\nmkdir \"${PROJECT_DIR}/tmp\"\ncd \"${PROJECT_DIR}/tmp\"\n\ncurl -fLO \"https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/${PANDOC_FILE_NAME}-macOS.zip\"\nunzip \"pandoc-${PANDOC_VERSION}-macOS.zip\"\n\nmkdir -p \"${PROJECT_DIR}/MarkdownEditor/Binaries\"\ncp \"${PANDOC_FILE_NAME}/bin/pandoc\" \"${PROJECT_DIR}/MarkdownEditor/Binaries/.\"\n\nrm -rf \"${PROJECT_DIR}/tmp\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -409,6 +426,7 @@
 				4F3A88A32052C7F500A0050E /* PhpMarkdownConverter.m in Sources */,
 				4F3A889D2052C7F500A0050E /* AppDelegate.m in Sources */,
 				4F3A88A62052C7F500A0050E /* EditorViewController.m in Sources */,
+				30678E6530A3501D001BDA4E /* LineNumberRulerView.m in Sources */,
 				4F3A889E2052C7F500A0050E /* ConverterManager.m in Sources */,
 				4F3A88A82052C7F500A0050E /* MainWindowController.m in Sources */,
 				4F3A88A52052C7F500A0050E /* StrictMarkdownConverter.m in Sources */,
@@ -514,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -565,7 +583,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -578,7 +596,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MarkdownEditor/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = info.iwaki.MarkdownEditor;
 				PRODUCT_NAME = "Markdown Editor";
 			};
@@ -591,7 +613,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MarkdownEditor/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = info.iwaki.MarkdownEditor;
 				PRODUCT_NAME = "Markdown Editor";
 			};
@@ -604,7 +630,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MarkdownEditorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = info.iwaki.MarkdownEditorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarkdownEditor.app/Contents/MacOS/MarkdownEditor";
@@ -618,7 +649,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MarkdownEditorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = info.iwaki.MarkdownEditorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarkdownEditor.app/Contents/MacOS/MarkdownEditor";
@@ -631,7 +667,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MarkdownEditorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = info.iwaki.MarkdownEditorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = MarkdownEditor;
@@ -644,7 +685,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MarkdownEditorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = info.iwaki.MarkdownEditorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = MarkdownEditor;
@@ -691,6 +737,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A1B2C3D4E5F6000000000010 /* XCLocalSwiftPackageReference "Packages/GCDWebServer" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/GCDWebServer;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A1B2C3D4E5F600000000000F /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/openid/AppAuth-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3D4E5F600000000000C /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000000F /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
+		};
+		A1B2C3D4E5F600000000000D /* GCDWebServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F6000000000010 /* XCLocalSwiftPackageReference "Packages/GCDWebServer" */;
+			productName = GCDWebServer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4F94D3E220458A3B00D85BEA /* Project object */;
 }
