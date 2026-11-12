@@ -1,5 +1,7 @@
 # Markdown Editor for macOS
 
+[![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=russcollis&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/russcollis)
+
 A native macOS Markdown editor written in Objective-C, with a live side-by-side HTML preview.
 
 Originally created by [Satoshi Iwaki](https://github.com/satoshi-iwaki) (2018).
